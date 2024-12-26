@@ -1,5 +1,5 @@
 exports.createOrder = (req,res,next)=>{
-    res,json({
+    res.json({
         sucess: true,
         message:"Order Works!"
     })
