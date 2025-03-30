@@ -14,13 +14,13 @@ exports.createOrder = async(req,res,next)=>{
     const order = await orderModel.create({cartItems, amount, status})
 
     //updating product stock
-    cartItems.forEach(async(item)=>{
-        const product = await productModle.findById(item.product._id);
-        product.stock = product.stock - item.qty;
-        await product.save();
-    })
+    // cartItems.forEach(async(item)=>{
+    //     const product = await productModle.findById(item.product._id);
+    //     product.stock = product.stock - item.qty;
+    //     await product.save();
+    // })
     
-    res.json({
+    res.json({   
         success: true,
         order
     })
